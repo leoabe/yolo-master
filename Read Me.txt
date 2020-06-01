@@ -1,0 +1,40 @@
+our project is mainly devided into two modules one is to convert text to speech and other to detect object and find its postion and let user know as audiofeedback.
+
+create a new folder named yolo-coco in yolo master and place coco.cfg and coco.names in it.
+also download weight file from link provided in mark up readme  and place it in yolo-coco folder.
+
+also download ffmpeg using follwong instrution in video https://www.youtube.com/watch?v=a_KqycyErd8  and add ffmpeg to your enviornment variable as mentioned in video 
+
+Each of the module has to be created into an executable file which can be run .Before creating any such files ensure that python files executes without any error. 
+
+exe files can be created using Pyinstaller 
+you can download it using pip install Pyinstaller
+Create exe files by opening cmd in same directory as yolo master running below two commands
+pyinstaller --onefile real-time-audio.py
+pyinstaller --onefile text.py
+
+
+object detection can be run using real-time-audio.exes
+
+text to speech can be done using text.exe
+
+By default it reads image screenshot.jpeg with in the same directory . For custom text to speech output you can either put a custom screenshot.jpg or open text.py and remove comments 
+
+from - 
+
+#camera = cv2.VideoCapture(0)
+
+#return_value, image = camera.read()
+#cv2.imwrite('screenshot'+'.jpg', image)
+#del(camera)
+
+present at 11, 13,14,15 lines respectively then it would take image from your computer web-cam if found any text would convert it into audio.
+
+This project module was inteded to accesed by user via voice control - this can be done by following the steps provided in the following link below
+
+
+https://www.hongkiat.com/blog/make-cortana-do-custom-chores-in-windows-10/ 
+
+ 
+
+
